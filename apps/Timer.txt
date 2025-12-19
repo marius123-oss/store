@@ -1,0 +1,20 @@
+@echo off
+title Timer
+color 0A
+echo =====================
+echo.
+echo        Timer         
+echo.
+echo =====================
+echo.
+set /p amount=How many seconds u want to fly: 
+echo Timer Started! 10 notifications will come when it is done!
+start OS.bat 
+timeout %amount% >nul
+echo Hey! Time is up!
+for /l %%i in (1,1,10) do (
+powershell -Command "& {Add-Type -AssemblyName System.Windows.Forms; Add-Type -AssemblyName System.Drawing; $notify = New-Object System.Windows.Forms.NotifyIcon; $notify.Icon = [System.Drawing.SystemIcons]::Information; $notify.Visible = $true; $notify.ShowBalloonTip(0, 'Hey You!', 'Wake up! Time is up!', [System.Windows.Forms.ToolTipIcon]::None)}"
+
+)
+pause
+exit
