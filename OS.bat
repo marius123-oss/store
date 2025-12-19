@@ -107,7 +107,6 @@ if %input% == 3 goto shut
 cls
 echo Apps:
 echo type "exit" to go on desktop
-echo You Dont need to also type the extension!
 echo.
 for %%f in ("apps\*.bat") do echo   - %%~nf
 set /p input=Enter app name to launch: 
