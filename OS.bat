@@ -24,7 +24,7 @@ if not exist usr.txt (
 if exist logged.txt (
 goto desktop
 )
-
+cls
 echo Starting Services...
 timeout 1 >nul
 echo started loginap.msc
