@@ -1,0 +1,15 @@
+@echo off
+title Web Browser
+color 0A
+:brw
+echo =======================
+echo      Web Browser
+echo =======================
+echo.
+echo This browser depends on ur deafault browser installed on your computer.
+echo Type "exit" To go to desktop!
+set /p input=Site (e.g. youtube.com): 
+if %input%==exit start OS.bat & exit
+start https://%input%
+cls
+goto brw
