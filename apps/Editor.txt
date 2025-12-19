@@ -1,0 +1,44 @@
+@echo off
+setlocal enabledelayedexpansion
+title MariusOS Custom Editor
+color 0E
+cd ..
+:editor_start
+cls
+echo ==========================================
+echo           MARIUS CUSTOM EDITOR
+echo ==========================================
+echo  Type your text line by line.
+echo  To SAVE and EXIT, type: .save
+echo ==========================================
+echo.
+
+set "filename="
+set /p filename="Enter filename (e.g., document.txt): "
+
+if "files\%filename%"=="" goto editor_start
+
+:: Clear the file if it already exists
+echo. > "files\%filename%"
+
+cls
+echo --- Editing: %filename% ---
+echo (Type '.save' on a new line to finish)
+echo ------------------------------------------
+
+:input_loop
+set "line="
+set /p line=" "
+
+:: Check if the user wants to save
+if /I "!line!"==".save" (
+    echo.
+    echo File "files\%filename%" saved successfully!
+    pause
+    start OS.bat
+    exit
+)
+
+:: Save the line to the file
+echo !line!>> "files\%filename%"
+goto input_loop
