@@ -11,6 +11,7 @@ if not exist pas.txt (
  del files\*.* /F /Q
  del "apps\Web-Browser.bat"
  del "apps\Timer.bat"
+ del "apps\Editor.bat"
  goto userset
 )
 
@@ -18,6 +19,7 @@ if not exist usr.txt (
  del files\*.*
  del "apps\Web-Browser.bat"
  del "apps\Timer.bat"
+ del "apps\Editor.bat"
  goto userset
 )
 
