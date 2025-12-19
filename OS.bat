@@ -1,4 +1,5 @@
 @echo off
+call updater.bat
 title MariusOS
 color 0A
 :OS
